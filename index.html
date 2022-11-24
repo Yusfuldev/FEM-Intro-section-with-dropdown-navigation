@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Intro-section-with-dropdown-navigation from frontend mentor"
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>FEM | Intro-section-with-dropdown-navigation</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div id="logo"><img src="./images/logo.svg" alt="logo" /></div>
+
+        <div class="burger">
+          <img class="open-menu" src="./images/icon-menu.svg" alt="" />
+        </div>
+
+        <div class="nav-menu">
+          <img class="close-menu" src="./images/icon-close-menu.svg" alt="" />
+          <ul>
+            <li class="menu has-submenu">
+              <a
+                >Features
+                <img class="up1" src="./images/icon-arrow-up.svg" alt="" />
+                <img class="down1" src="./images/icon-arrow-down.svg" alt="" />
+              </a>
+
+              <ul class="submenu1">
+                <li class="link gap">
+                  <a href="#">
+                    <img src="./images/icon-todo.svg" alt="" />Todo List</a
+                  >
+                </li>
+                <li class="link gap">
+                  <a href="#"
+                    ><img src="./images/icon-calendar.svg" alt="" /> Calender</a
+                  >
+                </li>
+                <li class="link gap">
+                  <a href="#"
+                    ><img src="./images/icon-reminders.svg" alt="" />
+                    Reminders</a
+                  >
+                </li>
+                <li class="link gap">
+                  <a href="#"
+                    ><img src="./images/icon-planning.svg" alt="" /> Planning</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="menu has-submenu">
+              <a
+                >Company
+                <img class="up" src="./images/icon-arrow-up.svg" alt="" />
+                <img class="down" src="./images/icon-arrow-down.svg" alt="" />
+              </a>
+
+              <ul class="submenu2">
+                <li class="link"><a href="#">History</a></li>
+                <li class="link"><a href="#">Our Team</a></li>
+                <li class="link"><a href="#">Blog</a></li>
+              </ul>
+            </li>
+            <li class="menu one"><a href="#">Careers</a></li>
+            <li class="menu one"><a href="#">About</a></li>
+          </ul>
+          <div class="login menu">
+            <a href="#">Login</a>
+            <button>Register</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="overlay"></div>
+      <section class="hero-section">
+        <div class="hero-image">
+          <img class="mobile" src="./images/image-hero-mobile.png" alt="" />
+          <img class="desktop" src="./images/image-hero-desktop.png" alt="" />
+        </div>
+        <div class="intro">
+          <h1>Make remote work</h1>
+          <p>
+            Get your team in sync, no matter your location. Streamline
+            processes, create team rituals, and watch productivity soar
+          </p>
+          <button>Learn more</button>
+          <div class="footer">
+            <img src="./images/client-databiz.svg" alt="" />
+            <img id="sm" src="./images/client-audiophile.svg" alt="" />
+            <img src="./images/client-meet.svg" alt="" />
+            <img src="./images/client-maker.svg" alt="" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/index.js"></script>
+  </body>
+</html>
