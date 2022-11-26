@@ -55,7 +55,7 @@ Also about event bubbling
 
 ## Author
 
-- Website - [Yusfuldev](https://app.netlify.com/teams/yusfuldev/overview)
-- Frontend Mentor - [](https://www.frontendmentor.io/profile/yusfuldev)
-- Twitter - [](https://www.twitter.com/hadebayo4u)
-- Github - [](https://www.github.com/Yusfuldev)
+- Website - [Netlify-profile](https://app.netlify.com/teams/yusfuldev/overview)
+- Frontend Mentor - [frontend-mentor-profile](https://www.frontendmentor.io/profile/yusfuldev)
+- Twitter - [Twitter](https://www.twitter.com/hadebayo4u)
+- Github - [Github](https://www.github.com/Yusfuldev)
