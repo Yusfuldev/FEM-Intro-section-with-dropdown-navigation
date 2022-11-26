@@ -14,15 +14,13 @@ const subMenu2 = document.querySelector(".submenu2");
 function closeMenu(e) {
   navMenu.classList.remove("menu-open");
   navMenu.classList.add("remove");
-  document.body.style.backgroundColor = "hsl(0, 0%, 98%";
- 
+  document.body.style.backgroundColor = "hsl(0, 0%, 98%)";
 }
 
 function openMenu(e) {
   navMenu.classList.remove("remove");
   navMenu.classList.add("menu-open");
   document.body.style.backgroundColor = "rgba(0, 0, 0, .5)";
- 
 }
 
 function showMenu1(e) {
@@ -35,7 +33,6 @@ function showMenu1(e) {
     arrowDown[1].classList.toggle("down1");
     arrowUp[1].classList.toggle("up1");
   }
-  
 }
 
 /*event listeners*/
@@ -45,6 +42,3 @@ menuClose.addEventListener("click", closeMenu);
 hasSubmenu.forEach((hasSubmenu) => {
   hasSubmenu.addEventListener("click", showMenu1);
 });
-
-
-
