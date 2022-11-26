@@ -3,57 +3,48 @@ const menuBar = document.querySelector(".open-menu");
 const burger = document.querySelector(".burger");
 const menuClose = document.querySelector(".close-menu");
 const navMenu = document.querySelector(".nav-menu");
-const arrowUp = document.querySelector(".up");
-const arrowDown = document.querySelector(".down");
-const arrowUp1 = document.querySelector(".up1");
-const arrowDown1 = document.querySelector(".down1");
-const links = document.querySelectorAll(".link");
+const hasSubmenu = document.querySelectorAll(".has-submenu > a");
+const arrowUp = document.querySelectorAll(".up");
+const arrowDown = document.querySelectorAll(".down");
 const subMenu1 = document.querySelector(".submenu1");
 const subMenu2 = document.querySelector(".submenu2");
-const overlay = document.querySelector(".overlay");
 
 /* functions */
 
 function closeMenu(e) {
   navMenu.classList.remove("menu-open");
-  overlay.style.display = "none";
+  navMenu.classList.add("remove");
+  document.body.style.backgroundColor = "hsl(0, 0%, 98%";
+ 
 }
-function openMenu() {
+
+function openMenu(e) {
+  navMenu.classList.remove("remove");
   navMenu.classList.add("menu-open");
-  overlay.style.display = "block";
+  document.body.style.backgroundColor = "rgba(0, 0, 0, .5)";
+ 
 }
 
-function up(e) {
-  if (e.target.classList.contains("down1")) {
-    subMenu1.classList.add("show");
-    arrowDown1.style.display = "none";
-    arrowUp1.style.display = "inline-Block";
-  } else if (e.target.classList.contains("up1")) {
-    subMenu1.classList.remove("show");
-    arrowDown1.style.display = "inline-Block";
-    arrowUp1.style.display = "none";
+function showMenu1(e) {
+  if (e.target === hasSubmenu[0]) {
+    subMenu1.classList.toggle("show");
+    arrowDown[0].classList.toggle("down1");
+    arrowUp[0].classList.toggle("up1");
+  } else if (e.target === hasSubmenu[1]) {
+    subMenu2.classList.toggle("show");
+    arrowDown[1].classList.toggle("down1");
+    arrowUp[1].classList.toggle("up1");
   }
-  console.log(" clicked");
-}
-
-function up2(e) {
-  if (e.target.classList.contains("down")) {
-    subMenu2.classList.add("show");
-    arrowDown.style.display = "none";
-    arrowUp.style.display = "inline-Block";
-  } else if (e.target.classList.contains("up")) {
-    subMenu2.classList.remove("show");
-    arrowDown.style.display = "inline-Block";
-    arrowUp.style.display = "none";
-  }
+  
 }
 
 /*event listeners*/
 burger.addEventListener("click", openMenu); //menu icon
 menuClose.addEventListener("click", closeMenu);
 
-arrowDown.addEventListener("click", up2); //bottom sub-menu
-arrowUp.addEventListener("click", up2);
+hasSubmenu.forEach((hasSubmenu) => {
+  hasSubmenu.addEventListener("click", showMenu1);
+});
 
-arrowDown1.addEventListener("click", up); //top sub-menu
-arrowUp1.addEventListener("click", up);
+
+

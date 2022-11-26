@@ -18,10 +18,10 @@ $dark: hsl(0, 0%, 8%);
 html {
   font-size: 62.5%;
   min-width: 375px;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 body {
-  overflow-x: hidden;
+  overflow: hidden;
   margin: 0 auto;
   font-size: 1.5rem;
   background-color: $background;
@@ -85,17 +85,17 @@ nav .open-menu {
   flex-direction: column;
   gap: 3rem;
   width: 65%;
-  height: 100vh;
+  min-height: 100vh;
   z-index: 100;
   transform: translateX(100%);
   // transition: transform 1s;
-  .login {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    text-align: center;
-    gap: 1rem;
-  }
+}
+.nav-menu .login {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  text-align: center;
+  gap: 1rem;
 }
 .login button {
   min-width: 20rem;
@@ -113,10 +113,11 @@ nav .open-menu {
 }
 .close-menu {
   padding-top: 1rem;
+  padding-right: 2rem;
   align-self: flex-end;
   justify-self: flex-start;
   cursor: pointer;
-  width: 10%;
+  width: 5rem;
 }
 
 .has-submenu img {
@@ -172,16 +173,22 @@ main {
 p {
   padding: 2rem;
 }
-button {
+.cta {
   font-weight: 700;
+  cursor: pointer;
   color: white;
   background-color: $dark;
   width: 30%;
   padding: 1rem;
   border-radius: 1rem;
-  border: none;
-  cursor: pointer;
+  border: 2px solid $dark;
 }
+.cta:hover {
+  color: $dark;
+  border: 2px solid $text;
+  background-color: $background;
+}
+
 .footer {
   margin-top: 2rem;
   padding: 2rem;
@@ -195,41 +202,34 @@ button {
 img {
   width: 20%;
 }
-.overlay {
-  display: none;
-  background-color: hsla(0, 0%, 0%, 0.3);
-  filter: blur(30px);
-  width: 35%;
-  height: 100vh;
-  position: absolute;
-  top: -5px;
-  left: 0;
-}
 
 // javascript classes
 .menu-open {
   transform: translateX(0%);
-  transition: transform 1s;
+  transition: transform 0.5s;
 }
 
 .show {
   transform: translateY(0);
   display: block;
 }
+.remove {
+  transform: translateX(100%);
+  display: block;
+  transition: transform 0.5s;
+}
 
 // Media queries
 @media (min-width: 1024px) {
   body,
   html {
-    overflow-x: hidden;
+    overflow: hidden;
     min-width: 1024px;
   }
   .close-menu {
     display: none;
   }
-  .overlay {
-    display: none;
-  }
+
   .burger {
     display: none;
   }
@@ -262,10 +262,11 @@ img {
     transition: none;
     background: none;
   }
+
   .nav-menu ul {
+    flex: 2;
     display: flex;
     align-items: start;
-    flex: 2;
     justify-content: start;
     gap: 2rem;
   }
@@ -276,6 +277,7 @@ img {
     line-height: 0;
     gap: 2rem;
   }
+
   .nav-menu .login a {
     padding-top: 0.5rem;
   }
@@ -343,30 +345,23 @@ img {
     line-height: 2rem;
     font-size: 1.3rem;
   }
-  .intro button {
-    font-weight: 700;
-    color: white;
-    background-color: $dark;
-    width: 30%;
-    padding: 1rem;
-    border-radius: 1rem;
+  .cta {
     border: 2px solid $dark;
+    background-color: $dark;
+    color: white;
     cursor: pointer;
-    &:hover {
-      color: $dark;
-
-      background-color: $background;
-    }
   }
 
-  footer {
-    // position: absolute;
-
-    margin-left: 14%;
-    // margin-top: -20rem;
-    width: 50%;
+  .footer img {
+    width: 20%;
   }
-  footer img {
-    width: 11%;
+  #sm {
+    width: 10%;
+  }
+  .down1 {
+    display: none;
+  }
+  .up1 {
+    display: inline-block;
   }
 }

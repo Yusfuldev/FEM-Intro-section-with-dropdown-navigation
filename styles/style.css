@@ -19,11 +19,11 @@
 html {
   font-size: 62.5%;
   min-width: 375px;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 body {
-  overflow-x: hidden;
+  overflow: hidden;
   margin: 0 auto;
   font-size: 1.5rem;
   background-color: #fafafa;
@@ -107,7 +107,7 @@ nav .open-menu {
           flex-direction: column;
   gap: 3rem;
   width: 65%;
-  height: 100vh;
+  min-height: 100vh;
   z-index: 100;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
@@ -145,11 +145,12 @@ nav .open-menu {
 
 .close-menu {
   padding-top: 1rem;
+  padding-right: 2rem;
   -ms-flex-item-align: end;
       align-self: flex-end;
   justify-self: flex-start;
   cursor: pointer;
-  width: 10%;
+  width: 5rem;
 }
 
 .has-submenu img {
@@ -228,15 +229,21 @@ p {
   padding: 2rem;
 }
 
-button {
+.cta {
   font-weight: 700;
+  cursor: pointer;
   color: white;
   background-color: #141414;
   width: 30%;
   padding: 1rem;
   border-radius: 1rem;
-  border: none;
-  cursor: pointer;
+  border: 2px solid #141414;
+}
+
+.cta:hover {
+  color: #141414;
+  border: 2px solid dimgray;
+  background-color: #fafafa;
 }
 
 .footer {
@@ -259,25 +266,13 @@ img {
   width: 20%;
 }
 
-.overlay {
-  display: none;
-  background-color: rgba(0, 0, 0, 0.3);
-  -webkit-filter: blur(30px);
-          filter: blur(30px);
-  width: 35%;
-  height: 100vh;
-  position: absolute;
-  top: -5px;
-  left: 0;
-}
-
 .menu-open {
   -webkit-transform: translateX(0%);
           transform: translateX(0%);
-  -webkit-transition: -webkit-transform 1s;
-  transition: -webkit-transform 1s;
-  transition: transform 1s;
-  transition: transform 1s, -webkit-transform 1s;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
 .show {
@@ -286,16 +281,23 @@ img {
   display: block;
 }
 
+.remove {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  display: block;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
 @media (min-width: 1024px) {
   body,
   html {
-    overflow-x: hidden;
+    overflow: hidden;
     min-width: 1024px;
   }
   .close-menu {
-    display: none;
-  }
-  .overlay {
     display: none;
   }
   .burger {
@@ -344,15 +346,15 @@ img {
     background: none;
   }
   .nav-menu ul {
+    -webkit-box-flex: 2;
+        -ms-flex: 2;
+            flex: 2;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: start;
-    -webkit-box-flex: 2;
-        -ms-flex: 2;
-            flex: 2;
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: start;
@@ -455,26 +457,23 @@ img {
     line-height: 2rem;
     font-size: 1.3rem;
   }
-  .intro button {
-    font-weight: 700;
-    color: white;
-    background-color: #141414;
-    width: 30%;
-    padding: 1rem;
-    border-radius: 1rem;
+  .cta {
     border: 2px solid #141414;
+    background-color: #141414;
+    color: white;
     cursor: pointer;
   }
-  .intro button:hover {
-    color: #141414;
-    background-color: #fafafa;
+  .footer img {
+    width: 20%;
   }
-  footer {
-    margin-left: 14%;
-    width: 50%;
+  #sm {
+    width: 10%;
   }
-  footer img {
-    width: 11%;
+  .down1 {
+    display: none;
+  }
+  .up1 {
+    display: inline-block;
   }
 }
 /*# sourceMappingURL=style.css.map */
