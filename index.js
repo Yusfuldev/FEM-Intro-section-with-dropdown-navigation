@@ -38,7 +38,15 @@ function showMenu1(e) {
 /*event listeners*/
 burger.addEventListener("click", openMenu); //menu icon
 menuClose.addEventListener("click", closeMenu);
-
+document.body.addEventListener("click", (e) => {
+  if (
+    e.target !== navMenu.children &&
+    e.target !== navMenu &&
+    e.target !== burger
+  ) {
+    closeMenu();
+  }
+});
 hasSubmenu.forEach((hasSubmenu) => {
   hasSubmenu.addEventListener("click", showMenu1);
 });
