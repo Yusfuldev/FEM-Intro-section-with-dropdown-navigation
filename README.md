@@ -34,7 +34,6 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github](https://github.com/Yusfuldev/FEM-Intro-section-with-dropdown-navigation)
-- Live Site URL: [live site](https://introsection-with-dropdown-nav.netlify.app/)
 
 ### Built with
 
